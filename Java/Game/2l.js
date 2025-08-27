@@ -38,7 +38,7 @@ ctx.fillStyle = "white";
 ctx.textAlign = "center";
 ctx.font = "100px Arial";
 ctx.fillText("Womp, Womp", canvas.width/2, canvas.height/2);
-ctx.fillStyle = "white";
+ctx.fillStyle = "orange";
 ctx.textAlign = "center";
 ctx.font = "50px Arial";
 ctx.fillText("You have to make the challenge jump", canvas.width/2, canvas.height/2 + 100);
@@ -302,6 +302,9 @@ player.speed = 0;
 if(player.y <= 680 && !isColliding && !justPressed['ArrowUp'] && jump <= 200){
 player.y += speed;
 }
+if(justPressed['ArrowUp'] && jump <= 30){
+player.y += speed;
+}
 if(up){
 speed = 0;
 }
@@ -365,6 +368,9 @@ player.y += gravity;
 player.speed = 0;
 }
 if(player.y <= 680 && !isColliding && !justPressed['ArrowUp'] && jump <= 200){
+player.y += speed;
+}
+if(justPressed['ArrowUp'] && jump <= 30){
 player.y += speed;
 }
         if(isColliding && jump >= 30 && jump <= 200){

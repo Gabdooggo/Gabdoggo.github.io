@@ -127,12 +127,12 @@ function movePlayer(){
     }
     //TODO: what  happens if the player
     //goes off the edge of the screen??
-    if(player.y < 0){
-        player.y = 700;
-    }
-    if (player.y > 700){
-        player.y = 0;
-    }
+if(player.y < 0){
+player.y += player.speed;
+}
+if(player.y > 700){
+player.y -= player.speed;
+}
 }
 function checkWallCollision() {
     for (let wall of walls) {
@@ -207,6 +207,7 @@ function moveBox(){
         }
 }
 
+
 function checkCollision(){
     //this is the AABB method
     
@@ -238,7 +239,7 @@ cancelAnimationFrame(animationId);
 }
 gameRunning = true;
 win = false;
-player.speed = 7;
+player.speed = 10;
 score = 0;
 player.x = 1400;
 player.y = 200;
